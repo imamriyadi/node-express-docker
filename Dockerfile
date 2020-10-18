@@ -1,5 +1,5 @@
-FROM node:12
-
+FROM node:alpine
+RUN npm install -g nodemon
 # Create app directory
 WORKDIR /usr/src/node-express
 
@@ -16,4 +16,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 3000
-CMD [ "node", "./bin/www" ]
+CMD [ "nodemon", "./bin/www" ]
